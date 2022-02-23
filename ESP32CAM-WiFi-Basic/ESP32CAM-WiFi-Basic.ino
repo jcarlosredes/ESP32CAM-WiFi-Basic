@@ -21,8 +21,8 @@
 #include <WiFi.h>  // Biblioteca para manejar el WiFi del ESP32CAM
 
 // Datos de Red
-const char* ssid = "********";  // Pon aquí el nombre de la red a la que deseas conectarte
-const char* password = "********";  // Escribe la contraseña de dicha red
+const char* ssid = "CUCImovil";  // Pon aquí el nombre de la red a la que deseas conectarte
+const char* password = "";  // Escribe la contraseña de dicha red
 
 // Objetos
 WiFiClient espClient; // Este objeto maneja las variables necesarias para una conexion WiFi
@@ -62,8 +62,9 @@ void setup() {
 
   // Cuando se haya logrado la conexión, el programa avanzará, por lo tanto, puede informarse lo siguiente
   Serial.println();
-  Serial.println("WiFi conectado");
-  Serial.println("Direccion IP: ");
+  Serial.print("WiFi conectado a: ");
+  Serial.println(ssid);
+  Serial.print("Direccion IP: ");
   Serial.println(WiFi.localIP());
 
   // Si se logro la conexión, encender led
